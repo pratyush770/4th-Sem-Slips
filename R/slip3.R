@@ -1,0 +1,5 @@
+a=c(10,20,30)
+print("The minimum number is :")
+print(min(a))
+print("The maximum number is :")
+print(max(a))

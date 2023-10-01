@@ -1,0 +1,56 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class MyArray
+{
+int *arr,size,i;
+public:
+void accept()
+{
+cout<<"\nEnter the size of the array :";
+cin>>size;
+arr=new int[size];
+cout<<"\nEnter the array elements :";
+for(i=0;i<size;i++)
+{
+cin>>arr[i];
+}
+}
+void display()
+{
+cout<<"\nThe array elements are :";
+for(i=0;i<size;i++)
+{
+cout<<arr[i]<<" ";
+}
+}
+void operator -()
+{
+cout<<"\nThe array in reverse order is :";
+for(i=size-1;i>=0;i--)
+{
+cout<<arr[i]<<" ";
+}
+}
+void operator +(int n)
+{
+cout<<"\nThe array elements after adding constant 'n' are :\n";
+for(i=0;i<size;i++)
+{
+cout<<arr[i]+n<<" ";
+}
+}
+};
+void main()
+{
+int n;
+clrscr();
+MyArray m;
+m.accept();
+m.display();
+-m;
+cout<<"\nEnter the number to be added in array elements ";
+cin>>n;
+m+n;
+getch();
+}

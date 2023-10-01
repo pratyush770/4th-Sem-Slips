@@ -1,0 +1,24 @@
+#include<iostream.h>
+#include<conio.h>
+class number
+{
+int a;
+public:
+inline void accept() //code gets executed faster as inline function creates only 1 copy
+{
+cout<<"\nEnter the number :";
+cin>>a;
+}
+inline void display()
+{
+cout<<"\nThe number is :"<<a;
+}
+};
+void main()
+{
+clrscr();
+number n;
+n.accept();
+n.display();
+getch();
+}

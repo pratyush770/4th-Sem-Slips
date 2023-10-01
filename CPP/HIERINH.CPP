@@ -1,0 +1,35 @@
+//hierarchical inheritance in cpp
+#include<iostream.h>
+#include<conio.h>
+class A
+{
+public:
+void message()
+{
+cout<<"\nHello";
+}};
+class B:public A
+{
+public:
+void display()
+{
+cout<<"\nIndia";
+}};
+class C:public A
+{
+public:
+void putdata()
+{
+cout<<"\nGoodbye";
+}};
+void main()
+{
+clrscr();
+B aa;
+C bb;
+aa.message();
+aa.display();
+bb.message();
+bb.putdata();
+getch();
+}

@@ -1,0 +1,139 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class emp
+{
+protected:
+int code;
+char name[40];
+public:
+void getdata()
+{
+cout<<"\nEnter the employee code :";
+cin>>code;
+cout<<"\nEnter the name of the employee :";
+cin>>name;
+}
+void putdata()
+{
+cout<<"\nThe employee code is :"<<code;
+cout<<"\nTHe name of the employee is :"<<name;
+}};
+class ft:public emp
+{
+protected:
+int w,d;
+public:
+int sal;
+void getdata1()
+{
+cout<<"\nEnter the daily wages :";
+cin>>w;
+cout<<"\nEnter the number of days worked :";
+cin>>d;
+}
+void putdata1()
+{
+cout<<"\nThe daily wages are :"<<w;
+cout<<"\nThe number of days worked are :"<<d;
+}
+void total()
+{
+sal=w*d;
+cout<<"\nThe total salary of fulltime employee is :"<<sal;
+}};
+class pt:public emp
+{
+protected:
+int hr,w1;
+public:
+int sal1;
+void getdata2()
+{
+cout<<"\nEnter the number of working hours :";
+cin>>hr;
+cout<<"\nEnter the hourly wages :";
+cin>>w1;
+}
+void putdata2()
+{
+cout<<"\nThe number of working hours are :"<<hr;
+cout<<"\nThe hourly wages are :"<<w1;
+}
+void total1()
+{
+sal1=hr*w1;
+cout<<"\nThe total salary pf parttime employee is :"<<sal1;
+}};
+void main()
+{
+int i,n,ch;
+float max=0,max1=0;
+ft ff;
+pt pp;
+clrscr();
+do
+{
+cout<<"\n1)Accept the details of 'n' employees and calculate the salary";
+cout<<"\n2)Display the details of 'n' employees";
+cout<<"\n3)Display the details of employee having maximum salary for both the types of employees";
+cout<<"\nEnter your choice :";
+cin>>ch;
+switch(ch)
+{
+case 1:
+cout<<"\nFor fulltime employee";
+cout<<"\nEnter the number of employees :";
+cin>>n;
+for(i=0;i<n;i++)
+{
+ff.getdata();
+ff.getdata1();
+ff.total();
+}
+cout<<"\nFor parttime employee:";
+for(i=0;i<n;i++)
+{
+pp.getdata();
+pp.getdata2();
+pp.total1();
+}
+break;
+case 2 :
+cout<<"\nDetails of fulltime employee is as follows :";
+for(i=0;i<n;i++)
+{
+ff.putdata();
+ff.putdata1();
+ff.total();
+}
+cout<<"\nDetails of parttime employee are as follows :";
+for(i=0;i<n;i++)
+{
+pp.putdata();
+pp.putdata2();
+pp.total1();
+}
+break;
+case 3:
+for(i=0;i<n;i++)
+{
+if(ff.sal>max)
+{
+max=ff.sal;
+}
+}
+cout<<"\nMaximum salary of fulltime worker is :"<<max;
+for(i=0;i<n;i++)
+{
+if(pp.sal1>max1)
+{
+max1=pp.sal1;
+}
+}
+cout<<"\nMaximum salary of fulltime worker is :"<<max1;
+}
+}while(ch!=4);
+getch();
+}
+

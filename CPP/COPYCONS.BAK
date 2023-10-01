@@ -1,0 +1,28 @@
+//copy constructor usage
+#include<iostream.h>
+#include<conio.h>
+class demo
+{
+int empid;
+public:
+demo()
+{
+empid=10;
+}
+demo(demo &z)
+{
+empid=z.empid;
+}
+void putdata()
+{
+cout<<"\nThe value of empid is :"<<empid;
+}};
+void main()
+{
+demo aa;
+demo bb(aa);
+clrscr();
+aa.putdata();
+bb.putdata();
+getch();
+}

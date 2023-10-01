@@ -1,0 +1,59 @@
+#include<iostream.h>
+#include<conio.h>
+class Seller
+{
+public:
+int sal_q,tar_q,mon;
+float com;
+char sname[40],pname[40];
+void accept()
+{
+cout<<"\nEnter the seller name :";
+cin>>sname;
+cout<<"\nEnter the product name :";
+cin>>pname;
+cout<<"\nEnter the sales quantity:";
+cin>>sal_q;
+cout<<"\nEnter the target quantity :";
+cin>>tar_q;
+cout<<"\nEnter the month :";
+cin>>mon;
+}
+void display()
+{
+cout<<"\nThe name of the seller is :"<<sname;
+cout<<"\nThe name of the product is :"<<pname;
+cout<<"\nThe sales quantity is :"<<sal_q;
+cout<<"\nThe target quantity is :"<<tar_q;
+cout<<"\nThe month is :"<<mon;
+com=0;
+if(sal_q>tar_q)
+{
+com=com+((sal_q-tar_q)*0.25)+(tar_q*0.10);
+}
+else if(sal_q==tar_q)
+{
+com=com+(tar_q*0.10);
+}
+else
+{
+com=0;
+}
+cout<<"\nThe commission is :"<<com;
+}
+};
+void main()
+{
+int i,n;
+clrscr();
+Seller s[30];
+cout<<"\nEnter the number of sellers :";
+cin>>n;
+for(i=0;i<n;i++)
+{
+s[i].accept();
+s[i].display();
+}
+getch();
+}
+

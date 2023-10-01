@@ -1,0 +1,5 @@
+a=c(10,30,20,50)
+print("The numbers in ascending order are :")
+print(sort(a))
+print("The numbers in descending order are :")
+print(sort(a, decreasing = TRUE))

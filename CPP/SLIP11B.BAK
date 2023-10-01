@@ -1,0 +1,44 @@
+#include<iostream.h>
+#include<conio.h>
+class weight
+{
+int k,g;
+public:
+void getdata()
+{
+cout<<"\nEnter the kilogram :";
+cin>>k;
+cout<<"\nEnter the gram :";
+cin>>g;
+}
+void putdata()
+{
+cout<<k<<"."<<g;
+}
+weight operator +=(weight w2)
+{
+weight w3;
+w3.k=k+w2.k;
+w3.g=g+w2.g;
+return w3;
+}
+void display()
+{
+cout<<"\nAddition of two weights :";
+cout<<"\n"<<k<<"."<<g;
+}
+};
+void main()
+{
+clrscr();
+weight w1,w2,w3;
+cout<<"\nWeight 1";
+w1.getdata();
+w1.putdata();
+cout<<"\nWeight 2";
+w2.getdata();
+w2.putdata();
+w3=w1+w2;
+w3.display();
+getch();
+}

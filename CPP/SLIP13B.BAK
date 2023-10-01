@@ -1,0 +1,74 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class MyString
+{
+char *p_str;
+int l;
+public:
+MyString(char s[])
+{
+l=strlen(s);
+p_str=new char[l+1];
+strcpy(p_str,s);
+}
+void display()
+{
+cout<<"\nThe string is :"<<p_str;
+}
+void operator !()
+{
+int i,s;
+s=strlen(p_str);
+cout<<"\nThe reversed string is :";
+for(i=s;i>=0;i--)
+{
+cout<<p_str[i];
+}
+}
+void operator <(MyString o1)
+{
+if(o1.l>l)
+{
+cout<<"\nThe second string is greater than first string";
+}
+else if(o1.l<l)
+{
+cout<<"\nThe first string is greater than second string";
+}
+else
+{
+cout<<"\nBoth strings are of equal size";
+}
+}
+void conn()
+{
+int i;
+char c[10];
+strcpy(c,"'n'");
+cout<<"\nThe string after adding constant 'n' to each alphabet is as follows\n";
+for(i=0;i<l;i++)
+{
+cout<<p_str[i]<<c<<" ";
+}
+}
+delete p_str;
+};
+void main()
+{
+char s1[20],s2[20],n[2];
+clrscr();
+cout<<"\nEnter the first string :";
+cin>>s1;
+cout<<"\nEnter the second string :";
+cin>>s2;
+MyString m1(s1),m2(s2);
+m1.display();
+m2.display();
+!m1;
+!m2;
+m1<m2;
+m1.conn();
+m2.conn();
+getch();
+}

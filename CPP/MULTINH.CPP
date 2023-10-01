@@ -1,0 +1,39 @@
+//multiple inheritance in cpp
+#include<iostream.h>
+#include<conio.h>
+class A
+{
+protected :
+int a;
+public:
+void input()
+{
+cout<<"\nEnter the value of a :";
+cin>>a;
+}};
+class B
+{
+protected:
+int b;
+public:
+void output()
+{
+cout<<"\nEnter the value of b :";
+cin>>b;
+}};
+class C:public A,public B
+{
+public:
+void sum()
+{
+cout<<"\nThe sum of the numbers is :"<<a+b;
+}};
+void main()
+{
+clrscr();
+C aa;
+aa.input();
+aa.output();
+aa.sum();
+getch();
+}

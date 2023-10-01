@@ -1,0 +1,45 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class FixDeposit
+{
+int fd_no,fd_amt,intr,mamt,nom;
+char cname[40];
+public:
+FixDeposit(int fno,int famt,int no,char cn)
+{
+fd_no=fno;
+fd_amt=famt;
+nom=no;
+strcpy(cname,cn);
+intr=1000;
+}
+void display()
+{
+cout<<"\nThe fixed deposit number is :"<<fd_no;
+cout<<"\nThe name of the customer is :"<<cname;
+cout<<"\nThe fixed deposit amount is :"<<fd_amt;
+cout<<"\nThe number of months are :"<<nom;
+mamt=fd_amt+(intr*nom);
+cout<<"\nThe maturity amount is :"<<mamt;
+}
+};
+void main()
+{
+int fno,famt,no;
+char cn[40];
+clrscr();
+cout<<"\nEnter the fixed deposit number :";
+cin>>fno;
+cout<<"\nEnter the customer name :";
+cin>>cn;
+cout<<"\nEnter the fixed deposit amount :";
+cin>>famt;
+cout<<"\nEnter the number of months :";
+cin>>no;
+FixDeposit fd(fno,famt,no,cn);
+fd.display();
+getch();
+}
+
+

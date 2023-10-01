@@ -1,0 +1,6 @@
+library(dplyr)
+x=select(airquality,c(1))
+print(x)
+y=select(airquality,c(Wind))
+print(y)
+plot(airquality$Wind,airquality$Temp,xlab="Wind",ylab="Temp",col="blue")

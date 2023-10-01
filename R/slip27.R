@@ -1,0 +1,15 @@
+cbin=function(n)
+{
+  temp=0
+  base=1
+  while(n>0)
+  {
+    last_digit=n%%10  
+    n=as.integer(n/10) 
+    temp=as.integer(temp+last_digit*base) 
+    base=base*2 
+  }
+  print(temp)
+}
+n=as.integer(110)
+cbin(n)

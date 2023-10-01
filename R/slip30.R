@@ -1,0 +1,7 @@
+a=list("A","E","C","J","B","F","G","H","I","D")
+print("The contents of the list are")
+print(a)
+print("The list of strings in ascending order are")
+sort(unlist(a))
+print("The list of strings in descending order are")
+sort(unlist(a),decreasing=TRUE)

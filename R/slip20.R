@@ -1,0 +1,10 @@
+library(ggplot2)
+data("PlantGrowth")
+dataset=PlantGrowth
+x=dataset[,1:2]
+y=dataset[,1]
+barplot(y)
+ggplot(PlantGrowth,aes(weight))+
+geom_density(aes(data=weight,fill=group)
+,position="identity",alpha=0.5)+labs(x='Weight',y="Density")+
+scale_fill_discrete(name="Group")+scale_x_continuous(limits=c(2,8))

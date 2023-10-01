@@ -1,0 +1,30 @@
+//friend function usage
+#include<iostream.h>
+#include<conio.h>
+class A
+{
+int a,b;
+public:
+void getdata();
+friend int sum(A);   //syntax = friend keyword datatype fun_name(class_name);
+};
+void A::getdata()
+{
+cout<<"Enter the value of the first number :";
+cin>>a;
+cout<<"Enter the value of the second number :";
+cin>>b;
+}
+int sum(A S)   //syntax = datatype fun_name(class_name object_name)
+{
+return(S.a+S.b);
+}
+void main()
+{
+A S;
+clrscr();
+S.getdata();
+cout<<"Addition of the two numbers is :"<<sum(S);
+//for calling fun_name(object_name)
+getch();
+}
